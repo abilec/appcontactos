@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
             <div class="col">
                 <h1>Iniciar Sesión</h1>
-            <form action="<?php echo redirect(); ?>" method="post">
+            <form action="<?php echo site_url("inicio/login"); ?>" method="post">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Usuario</label>
-                    <input type="email" class="form-control" id="nombre" name="nombre">
+                    <input type="text" class="form-control" id="nombre" name="nombre">
                 </div>
                 <div class="mb-3">
                     <label for="clave" class="form-label">Contraseña</label>

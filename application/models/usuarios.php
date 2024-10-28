@@ -1,5 +1,6 @@
 <?php
-class usuarios extends CI_Controller {
+class usuarios extends CI_Model {
+
     public function check_login($nombre, $clave)
     {
         $this->db->select("id_user");
@@ -13,11 +14,11 @@ class usuarios extends CI_Controller {
             return false;
         }
     }
+
     public function get_byId($id){
         $this->db->select("usuarios.*");
-        $this->db->from("usuarios");
         $this->db->where("id_user", $id);
-        $query = $this->db->get();
+        $query = $this->db->get("usuarios");
         return $query->row_array();
     }
 
