@@ -11,5 +11,10 @@ class Contactos extends CI_Controller {
 
     public function principal(){
         $this->load->view('contactos');
+
+
+    }
+    public function listar(){
+        
     }
 }
