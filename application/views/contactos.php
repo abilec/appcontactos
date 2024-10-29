@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="row">
             <div class="col">
-                <?php if($lista){ ?>
+                <?php if(!empty($lista)){ ?>
                 <h3>Contactos</h3>
                     <table class="table table-striped">
                         <thead>

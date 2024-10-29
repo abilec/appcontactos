@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Contactos extends CI_Controller {
     public $datos = array();
-
+    public $lista = array();  
+    
     public function __construct(){
         parent::__construct();
         if($this->session->userdata("id_user")){
@@ -40,7 +41,8 @@ class Contactos extends CI_Controller {
 
     public function listar()
     {
-        $is_user = $this->session->userdata("id_user");        
+        $is_user = $this->session->userdata("id_user");     
+        $lista = [];  
         $lista["contactos"] = $this->contact->listar_id($is_user);
 
         $this->load->view("contactos", $lista);
