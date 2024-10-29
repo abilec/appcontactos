@@ -41,18 +41,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="row">
             <div class="col">
+                <?php if($lista){ ?>
                 <h3>Contactos</h3>
-                <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Apellido</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Tel</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                </table>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Apellido</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Tel</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($lista as $c){ ?>
+                                <tr>
+                                    <td class="text-center"><?= $c["apellido"] ?></td>
+                                    <td class="text-center"><?= $c["nombre"] ?></td>
+                                    <td class="text-center"><?= $c["email"] ?></td>
+                                    <td class="text-center"><?= $c["tel"] ?></td>
+                                    <td class="text-center"><a class="btn btn-outline-danger"
+                                            href="<?= site_url("contactos/eliminar?contacto_id=" . $c["contacto_id"]) ?>">
+                                            </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                <?php } ?>
             </div>
         </div>
     </div>

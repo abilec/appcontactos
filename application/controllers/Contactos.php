@@ -6,6 +6,9 @@ class Contactos extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+        if($this->session->userdata("id_user")){
+            $this->load->model('contact');
+        }
     }
     public function index(){
         $this->load->view('contactos');
@@ -22,8 +25,8 @@ class Contactos extends CI_Controller {
             $this->load->view('contactos',$this->datos);
         }else{
 
-            $this->load->model('contact');
-            $data['id_user']= $this->session->get_userdata("id_user");
+            
+            $data['id_user']= $this->session->userdata("id_user");
             $data['apellido']=set_value('apellido');
             $data['nombre']=set_value('nombre');
             $data['email']=set_value('email');
@@ -33,5 +36,16 @@ class Contactos extends CI_Controller {
             redirect('contactos/index');
             
         }
+    }
+
+    public function listar()
+    {
+        $is_user = $this->session->userdata("id_user");        
+        $lista["contactos"] = $this->contact->listar_id($is_user);
+
+        $this->load->view("contactos", $lista);
+    }
+    public function eliminar(){
+        
     }
 }

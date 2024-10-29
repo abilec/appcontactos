@@ -37,23 +37,5 @@ class Inicio extends CI_Controller {
 			}
 		}
 
-
-		// if($this->form_validation->run() == FALSE){
-		// 	$this->load->view('inicio');
-		// }else{
-		// 	$this->load->models('usuarios');
-		// 	$user = set_value("nombre");
-        //     $clave = set_value("clave");
-		// 	if($id_u = $this->usuarios->check_login($user, $clave)){
-		// 		$u = $this->usuarios->get_byId($id_u);
-		// 		$this->session->set_userdata("id_user",$id_u);
-		// 		$this->session->set_userdata("usuario",$u["nombre"]);
-		// 		redirect("contactos/principal");
-		// 	}else{
-		// 		$this->session->set_flashdata("OP","NoUser");
-		// 		redirect("inicio/login");
-		// 	}
-		// }	
-	
 	}
 }
